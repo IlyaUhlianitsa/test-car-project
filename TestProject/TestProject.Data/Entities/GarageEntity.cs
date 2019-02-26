@@ -4,6 +4,8 @@
     {
         public string Name { get; set; }
 
+        public long AreaId { get; set; }
+
         public virtual AreaEntity Area { get; set; }
     }
 }

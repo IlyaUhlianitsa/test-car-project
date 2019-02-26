@@ -13,6 +13,13 @@ namespace TestProject.Data
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            optionsBuilder.UseLazyLoadingProxies();
+        }
+
         public virtual DbSet<AreaEntity> Areas { get; set; }
         public virtual DbSet<CarCategoryEntity> CarCategories { get; set; }
         public virtual DbSet<GarageEntity> Garages { get; set; }

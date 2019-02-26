@@ -42,7 +42,7 @@ namespace TestProject.Repositories
 
         public async Task Delete(long carId)
         {
-            _context.Cars.Remove(new CarEntity() { Id = carId });
+            _context.Cars.Remove(new CarEntity { Id = carId });
             await _context.SaveChangesAsync();
         }
     }

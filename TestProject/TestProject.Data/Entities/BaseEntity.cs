@@ -8,6 +8,6 @@ namespace TestProject.Data.Entities
 
         public DateTime DateCreated { get; set; }
 
-        public DateTime DateModified { get; set; }
+        public DateTime? DateModified { get; set; }
     }
 }
