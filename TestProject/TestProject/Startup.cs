@@ -40,12 +40,7 @@ namespace TestProject
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
+            
             app.UseMvc();
             InitializeInMemoryDatabase(app);
         }
@@ -56,12 +51,12 @@ namespace TestProject
             {
                 var context = serviceScope.ServiceProvider.GetService<CarDbContext>();
                 context.Areas.Add(new AreaEntity {Id = 1, Name = "area", DateCreated = DateTime.Now});
-                context.Garages.Add(new GarageEntity {Id = 2, Name = "garage", DateCreated = DateTime.Now, AreaId = 1});
+                context.Garages.Add(new GarageEntity {Id = 1, Name = "garage", DateCreated = DateTime.Now, AreaId = 1});
                 context.CarCategories.Add(new CarCategoryEntity
-                    {Id = 3, Name = "category", DateCreated = DateTime.Now});
+                    {Id = 1, Name = "category", DateCreated = DateTime.Now});
                 context.Cars.Add(new CarEntity
-                    {Id = 4, Description = "carDescription", Title = "title",
-                        DateCreated = DateTime.Now, CategoryId = 3, GarageId = 2});
+                    {Id = 1000, Description = "carDescription", Title = "title",
+                        DateCreated = DateTime.Now, CategoryId = 1, GarageId = 1});
                 context.SaveChanges();
             }
         }

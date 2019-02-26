@@ -25,13 +25,17 @@ namespace TestProject.Repositories
 
         public async Task<CarEntity> Get(long carId)
         {
-            return await _context.Cars.FirstOrDefaultAsync(x => x.Id == carId);
+            return await _context.Cars
+                .Include(x => x.Garage)
+                .Include(x => x.Category)
+                .FirstOrDefaultAsync(x => x.Id == carId);
         }
 
-        public async Task Create(CarEntity car)
+        public async Task<bool> Create(CarEntity car)
         {
             await _context.Cars.AddAsync(car);
-            await _context.SaveChangesAsync();
+            int updatedCount = await _context.SaveChangesAsync();
+            return updatedCount == 1;
         }
 
         public async Task Update(CarEntity car, string description)
@@ -40,9 +44,9 @@ namespace TestProject.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(long carId)
+        public async Task Delete(CarEntity carEntity)
         {
-            _context.Cars.Remove(new CarEntity { Id = carId });
+            _context.Cars.Remove(carEntity);
             await _context.SaveChangesAsync();
         }
     }

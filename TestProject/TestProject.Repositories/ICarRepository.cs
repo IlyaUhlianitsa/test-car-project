@@ -10,10 +10,10 @@ namespace TestProject.Repositories
 
         Task<CarEntity> Get(long carId);
 
-        Task Create(CarEntity car);
+        Task<bool> Create(CarEntity car);
 
         Task Update(CarEntity car, string description);
 
-        Task Delete(long carId);
+        Task Delete(CarEntity carEntity);
     }
 }
