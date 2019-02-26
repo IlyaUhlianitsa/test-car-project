@@ -1,15 +1,7 @@
-﻿using System;
-
-namespace TestProject.Data.Entities
+﻿namespace TestProject.Data.Entities
 {
-    public class CarCategoryEntity
+    public class CarCategoryEntity : BaseEntity
     {
-        public long Id { get; set; }
-
         public string Name { get; set; }
-
-        public DateTime DateCreated { get; set; }
-
-        public DateTime DateModified { get; set; }
     }
 }

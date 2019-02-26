@@ -1,11 +1,7 @@
-﻿using System;
-
-namespace TestProject.Data.Entities
+﻿namespace TestProject.Data.Entities
 {
-    public class CarEntity
+    public class CarEntity : BaseEntity
     {
-        public long Id { get; set; }
-
         public string Title { get; set; }
 
         public string Description { get; set; }
@@ -17,9 +13,5 @@ namespace TestProject.Data.Entities
         public long CategoryId { get; set; }
 
         public virtual CarCategoryEntity Category { get; set; }
-
-        public DateTime DateCreated { get; set; }
-
-        public DateTime DateModified { get; set; }
     }
 }
