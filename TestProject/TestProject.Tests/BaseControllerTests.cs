@@ -1,11 +1,9 @@
-﻿using System.IO;
-using System.Net.Http;
+﻿using System.Net.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using NUnit.Framework;
-using TestProject.Data;
 using TestProject.Services;
 
 namespace TestProject.Tests

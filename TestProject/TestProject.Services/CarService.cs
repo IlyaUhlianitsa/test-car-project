@@ -45,6 +45,7 @@ namespace TestProject.Services
         {
             if (!car.Id.HasValue)
                 return false;
+
             CarEntity carEntity = await _carRepository.Get(car.Id.Value);
             if (carEntity == null)
                 return false;
