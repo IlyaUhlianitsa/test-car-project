@@ -22,11 +22,10 @@ namespace TestProject
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public virtual void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<CarDbContext>(c => c.UseInMemoryDatabase("car"));
-
 
             services.AddTransient<ICarRepository, CarRepository>();
             services.AddTransient<IGarageRepository, GarageRepository>();

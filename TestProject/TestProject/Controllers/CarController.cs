@@ -5,7 +5,7 @@ using TestProject.Services.Models;
 
 namespace TestProject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CarController : ControllerBase
     {
@@ -53,7 +53,7 @@ namespace TestProject.Controllers
             if (!deleted)
                 return NotFound();
 
-            return Ok();
+            return NoContent();
         }
     }
 }
